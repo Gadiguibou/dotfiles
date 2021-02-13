@@ -31,6 +31,8 @@ abbr du "du -ch"
 abbr ipp "curl ipinfo.io/ip"
 abbr exdir "cd (exercism workspace)"
 
+alias config='/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME'
+
 function rstpd; /home/gabriel/.local/bin/rstpd.sh; end
 function sysbackup; sudo /home/gabriel/.local/bin/borg-system-backup.sh; end
 function ls-man-installed; /home/gabriel/.local/bin/list-manually-installed.sh; end
