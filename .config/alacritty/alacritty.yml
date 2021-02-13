@@ -1,0 +1,155 @@
+shell:
+  program: /usr/bin/fish
+  args:
+    - --login
+
+window:
+  dimensions:
+    columns: 80
+    lines: 24
+  padding:
+    x: 6
+    y: 6
+
+font:
+  normal:
+    family: SF Mono
+    style: Medium
+  bold:
+    family: SF Mono
+  italic:
+    family: SF Mono
+  bold_italic:
+    family: SF Mono
+  size: 11
+  draw_bold_text_with_bright_colors: true
+
+schemes:
+  solarized_dark:
+  # Colors (Solarized Dark)
+    # Default colors
+    primary:
+      background: '#002b36' # base03
+      foreground: '#839496' # base0
+
+    # Cursor colors
+    cursor:
+      text: '#002b36'   # base03
+      cursor: '#839496' # base0
+
+    # Normal colors
+    normal:
+      black: '#073642'   # base02
+      red: '#dc322f'     # red
+      green: '#859900'   # green
+      yellow: '#b58900'  # yellow
+      blue: '#268bd2'    # blue
+      magenta: '#d33682' # magenta
+      cyan: '#2aa198'    # cyan
+      white: '#eee8d5'   # base2
+
+    # Bright colors
+    bright:
+      black: '#002b36'   # base03
+      red: '#cb4b16'     # orange
+      green: '#586e75'   # base01
+      yellow: '#657b83'  # base00
+      blue: '#839496'    # base0
+      magenta: '#6c71c4' # violet
+      cyan: '#93a1a1'    # base1
+      white: '#fdf6e3'   # base3
+
+  solarized_light:
+    # Colors (Solarized Light)
+      # Default colors
+    primary:
+      background: '#fdf6e3'   # base3
+      foreground: '#657b83'   # base00
+
+      # Cursor colors
+    cursor:
+      text: '#fdf6e3'     # base3
+      cursor: '#657b83'   # base00
+
+      # Normal colors
+    normal:
+      black: '#073642'     # base02
+      red: '#dc322f'       # red
+      green: '#859900'     # green
+      yellow: '#b58900'    # yellow
+      blue: '#268bd2'      # blue
+      magenta: '#d33682'   # magenta
+      cyan: '#2aa198'      # cyan
+      white: '#eee8d5'     # base2
+
+      # Bright colors
+    bright:
+      black: '#002b36'     # base03
+      red: '#cb4b16'       # orange
+      green: '#586e75'     # base01
+      yellow: '#657b83'    # base00
+      blue: '#839496'      # base0
+      magenta: '#6c71c4'   # violet
+      cyan: '#93a1a1'      # base1
+      white: '#fdf6e3'     # base3
+
+  alacritty_colorscheme: &cs
+  # COLORSCHEME: solarized_light.yaml
+  # Default colors
+    primary:
+    # hard contrast: background = '0xf9f5d7'
+      background: '0xfdf6e3'
+      foreground: '0x586e75'
+
+  # Normal colors
+    normal:
+      black: '0x073642'
+      red: '0xdc322f'
+      green: '0x859900'
+      yellow: '0xb58900'
+      blue: '0x268bd2'
+      magenta: '0xd33682'
+      cyan: '0x2aa198'
+      white: '0xeee8d5'
+
+  # Bright colors
+    bright:
+      black: '0x002b36'
+      red: '0xcb4b16'
+      green: '0x586e75'
+      yellow: '0x657b83'
+      blue: '0x839496'
+      magenta: '0x6c71c4'
+      cyan: '0x93a1a1'
+      white: '0xfdf6e3'
+    cursor:
+      text: '0xf5f7ff'
+      cursor: '0x5e6687'
+
+  # Normal colors
+    indexed_colors:
+      - {index: 16, color: '0xc76b29'}
+      - {index: 17, color: '0x9c637a'}
+      - {index: 18, color: '0xdfe2f1'}
+      - {index: 19, color: '0x979db4'}
+      - {index: 20, color: '0x6b7394'}
+      - {index: 21, color: '0x293256'}
+    dim:
+      black: '0x31363b'
+      red: '0x783228'
+      green: '0x17a262'
+      yellow: '0xb65619'
+      blue: '0x1b668f'
+      magenta: '0x614a73'
+      cyan: '0x186c60'
+      white: '0x63686d'
+colors: *cs
+
+background_opacity: 1.0
+
+key_bindings:
+  - {key: V, mods: Control, action: Paste}
+  - {key: C, mods: Control, action: Copy}
+  - {key: V, mods: Control|Shift, chars: "\x16"}
+  - {key: C, mods: Control|Shift, chars: "\x03"}
+  - {key: Q, mods: Super, action: Quit}
