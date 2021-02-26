@@ -10,6 +10,11 @@ abbr alacconfig "code ~/.config/alacritty/alacritty.yml"
 abbr cs "alacritty-colorscheme"
 abbr ls "exa"
 abbr la "exa -la"
+abbr top "ytop"
+abbr du "dust"
+abbr cat "bat"
+abbr grep "rg"
+abbr ps "procs"
 abbr cp "cp -iv"
 abbr mv "mv -iv"
 abbr rm "rm -v"
@@ -33,50 +38,59 @@ abbr exdir "cd (exercism workspace)"
 
 alias config='/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME'
 
-function rstpd; /home/gabriel/.local/bin/rstpd.sh; end
-function sysbackup; sudo /home/gabriel/.local/bin/borg-system-backup.sh; end
-function ls-man-installed; /home/gabriel/.local/bin/list-manually-installed.sh; end
+function rstpd
+    /home/gabriel/.local/bin/rstpd.sh
+end
+function sysbackup
+    sudo /home/gabriel/.local/bin/borg-system-backup.sh
+end
+function ls-man-installed
+    /home/gabriel/.local/bin/list-manually-installed.sh
+end
 
 function update
-    sudo apt update && sudo apt upgrade; flatpak update; cargo install-update -a
+    sudo apt update && sudo apt upgrade
+    flatpak update
+    cargo install-update -a
 end
 
 function gccs
-    gcc-10 -Wall -Wextra -Wpedantic -Werror -O2 -std; c99 -fanalyzer
-	# -D_FORTIFY_SOURCE; 2 -fasynchronous-unwind-tables -fexceptions -fpic \
-	# -shared -fstack-clash-protection -g -pipe
+    gcc-10 -Wall -Wextra -Wpedantic -Werror -O2 -std
+    c99 -fanalyzer
+    # -D_FORTIFY_SOURCE; 2 -fasynchronous-unwind-tables -fexceptions -fpic \
+    # -shared -fstack-clash-protection -g -pipe
 end
 
 function ghdlr
     mkdir -p work && \
-    ghdl -i --workdir=work *.vhd && \
-    ghdl -m --workdir=work testbench && \
-    ghdl -r --workdir=work testbench --vcd=wave.vcd && \
-    gtkwave wave.vcd
+        ghdl -i --workdir=work *.vhd && \
+        ghdl -m --workdir=work testbench && \
+        ghdl -r --workdir=work testbench --vcd=wave.vcd && \
+        gtkwave wave.vcd
 end
 
 function clippystrict
     cargo clippy \
-    --all-targets \
-    --all-features \
-    -- \
-    --deny clippy::all \
-    --deny warnings \
-    --deny clippy::pedantic \
-    --deny clippy::cargo \
-    --deny clippy::nursery
+        --all-targets \
+        --all-features \
+        -- \
+        --deny clippy::all \
+        --deny warnings \
+        --deny clippy::pedantic \
+        --deny clippy::cargo \
+        --deny clippy::nursery
 end
 
 function rstfmtchk
     cargo fmt --all -- --check
 end
 
-function rustnew 
-  cargo new $argv[0] $argv[1] && cd ./$argv[0] && code .
+function rustnew
+    cargo new $argv[0] $argv[1] && cd ./$argv[0] && code .
 end
 
 function exnew
-  exercism download --track=$argv[0] --exercise=$argv[1] && cd /home/gabriel/snap/exercism/5/exercism/$argv[0]/$argv[1] && code .
+    exercism download --track=$argv[0] --exercise=$argv[1] && cd /home/gabriel/snap/exercism/5/exercism/$argv[0]/$argv[1] && code .
 end
 
 set COLOR_DIR "$HOME/.config/alacritty/colors/"
