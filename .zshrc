@@ -188,3 +188,4 @@ export SDKMAN_DIR="/home/gabriel/.sdkman"
 export GEM_HOME="$HOME/gems"
 export PATH="$HOME/gems/bin:$PATH"
 
+fpath+=${ZDOTDIR:-~}/.zsh_functions

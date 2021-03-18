@@ -86,11 +86,11 @@ function rstfmtchk
 end
 
 function rustnew
-    cargo new $argv[0] $argv[1] && cd ./$argv[0] && code .
+    cargo new $argv[1] $argv[2] && cd ./$argv[1] && code .
 end
 
 function exnew
-    exercism download --track=$argv[0] --exercise=$argv[1] && cd /home/gabriel/snap/exercism/5/exercism/$argv[0]/$argv[1] && code .
+    exercism download --track=$argv[1] --exercise=$argv[2] && cd /home/gabriel/snap/exercism/5/exercism/$argv[1]/$argv[2] && code .
 end
 
 set COLOR_DIR "$HOME/.config/alacritty/colors/"
