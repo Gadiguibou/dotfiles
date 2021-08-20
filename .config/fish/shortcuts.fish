@@ -10,10 +10,12 @@ abbr alacconfig "code ~/.config/alacritty/alacritty.yml"
 abbr cs "alacritty-colorscheme"
 abbr ls "exa"
 abbr la "exa -la"
+abbr sudocker "sudo docker"
 abbr top "ytop"
 abbr du "dust"
 abbr cat "bat"
 abbr grep "rg"
+abbr ps procs
 abbr ps "procs"
 abbr cp "cp -iv"
 abbr mv "mv -iv"
@@ -24,11 +26,13 @@ abbr ga "git add"
 abbr gaa "git add ."
 abbr gco "git checkout"
 abbr gb "git branch"
-abbr gf "git fetch"
+abbr gf "git fetch -v"
+abbr gpush "git push origin --set-upstream (git branch --show-current)"
 abbr gc "git commit"
 abbr gca "git commit --amend"
 abbr py "python"
 abbr py3 "python3"
+abbr django "python manage.py"
 abbr sdn "sudo shutdown -h now"
 abbr rbt "sudo reboot"
 abbr df "df -h"
@@ -98,9 +102,22 @@ set LIGHT_COLOR "solarized_light.yaml"
 set DARK_COLOR "solarized_dark.yaml"
 
 function day
-    alacritty-colorscheme -C $COLOR_DIR -a $LIGHT_COLOR -V
+    alacritty-colorscheme apply $LIGHT_COLOR
 end
 
 function night
-    alacritty-colorscheme -C $COLOR_DIR -a $DARK_COLOR -V
+    alacritty-colorscheme apply $DARK_COLOR
 end
+
+# trick to get NVM working in fis
+function nvm
+    bass source ~/.nvm/nvm.sh --no-use ';' nvm $argv
+end
+
+function localci
+    sudo docker run --rm -t -i -v $PWD:$PWD -v /var/run/docker.sock:/var/run/docker.sock -w $PWD gitlab/gitlab-runner exec docker $argv[1]
+end
+
+alias urlencode='python3 -c "import sys, urllib.parse as ul; print (ul.quote_plus(sys.argv[1]))"'
+
+alias urldecode='python3 -c "import sys, urllib.parse as ul; print(ul.unquote_plus(sys.argv[1]))"'
