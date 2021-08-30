@@ -2,23 +2,83 @@
 format = """
 $username\
 $hostname\
+$shlvl\
+$kubernetes\
 $directory\
+$vcsh\
 $git_branch\
 $git_commit\
 $git_state\
 $git_status\
+$hg_branch\
+$docker_context\
 $package\
+$cmake\
+$dart\
+$deno\
+$dotnet\
+$elixir\
+$elm\
+$erlang\
+$golang\
+$helm\
+$java\
+$julia\
+$kotlin\
+$nim\
+$nodejs\
+$ocaml\
+$perl\
+$php\
+$purescript\
+$python\
+$red\
+$ruby\
+$rust\
+$scala\
+$swift\
+$terraform\
+$vagrant\
+$zig\
+$nix_shell\
+$conda\
+$memory_usage\
+$aws\
+$gcloud\
+$openstack\
+$env_var\
+$crystal\
+$custom\
+$cmd_duration\
+$lua\
+$jobs\
+$battery\
+$time\
 $status\
-$character
-"""
+$shell\
+$character"""
 add_newline = false
+
+# A more minimalistic prompt
+# format = """
+# $username\
+# $hostname\
+# $directory\
+# $git_branch\
+# $git_commit\
+# $git_state\
+# $git_status\
+# $package\
+# $status\
+# $character
+# """
 
 [character]
 success_symbol = "[λ](green)"
 error_symbol = "[λ](red)"
 
 [aws]
-symbol = " "
+symbol = "  "
 
 [conda]
 symbol = " "
@@ -27,10 +87,9 @@ symbol = " "
 symbol = " "
 
 [directory]
-style = "cyan"
 read_only = " "
 
-[docker]
+[docker_context]
 symbol = " "
 
 [elixir]
@@ -44,9 +103,6 @@ symbol = " "
 
 [golang]
 symbol = " "
-
-[haskell]
-symbol = " "
 
 [hg_branch]
 symbol = " "
@@ -66,9 +122,6 @@ symbol = " "
 [nix_shell]
 symbol = " "
 
-[nodejs]
-symbol = " "
-
 [package]
 symbol = " "
 
@@ -86,6 +139,9 @@ symbol = " "
 
 [rust]
 symbol = " "
+
+[scala]
+symbol = " "
 
 [swift]
 symbol = "ﯣ "
