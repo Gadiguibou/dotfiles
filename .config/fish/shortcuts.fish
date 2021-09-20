@@ -19,7 +19,7 @@ abbr ps procs
 abbr ps "procs"
 abbr cp "cp -iv"
 abbr mv "mv -iv"
-abbr rm "rm -v"
+abbr rm "rm -iv"
 abbr mkd "mkdir -pv"
 abbr g "git"
 abbr ga "git add"
